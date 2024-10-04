@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : dummyALU
+Version: S-2021.06-SP4
+Date   : Tue May 30 09:54:45 2023
+****************************************
+
+
+Library(s) Used:
+
+    saed90nm_typ_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_hvt.db)
+    saed90nm_typ_nthh_hvt_lsh (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters/saed90nm_typ_nthh_hvt_lsh.db)
+    saed90nm_typ_nthh_lsh (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters/saed90nm_typ_nthh_lsh.db)
+    saed90nm_typ_nthn_hvt_lsh (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters/saed90nm_typ_nthn_hvt_lsh.db)
+    saed90nm_typ_ntl_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_ntl_hvt.db)
+    saed90nm_typ_nthn_hvt_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthn_hvt_lshss.db)
+    saed90nm_typ_lvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_lvt.db)
+    saed90nm_typ (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ.db)
+    saed90nm_typ_nthh_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthh_lshss.db)
+    saed90nm_typ_nthh_lvt_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthh_lvt_lshss.db)
+    saed90nm_typ_rdr_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/retention/with_async_reset/saed90nm_typ_rdr_hvt.db)
+
+
+Global Operating Voltage = 0.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+dummyALU                                 19.420   69.091 2.35e+07  112.023 100.0
+  comp_top_level (top_level)             17.865   67.446 2.34e+07  108.681  97.0
+    Adder_1 (Adder_nbit8)                 0.751    2.257 5.18e+04    3.060   2.7
+    Multiplier_1 (Multiplier_nbit8)      12.543   38.688 1.99e+07   71.121  63.5
+    ff_out (Reg_nbit16)                1.46e-03    2.896 7.87e+05    3.684   3.3
+    ff_mul_in_b (Reg_nbit8_0)             0.383    3.122 4.93e+05    3.998   3.6
+    ff_mul_in_a (Reg_nbit8_1)             0.392    2.971 4.93e+05    3.856   3.4
+    ff_sum_in_b (Reg_nbit8_2)             0.374    2.514 4.93e+05    3.381   3.0
+    ff_sum_in_a (Reg_nbit8_3)             0.373    2.510 4.93e+05    3.376   3.0
+1

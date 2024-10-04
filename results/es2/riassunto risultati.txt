@@ -1,0 +1,98 @@
+tutto alto:
+Number of ports:                          244
+Number of nets:                           772
+Number of cells:                          495
+Number of combinational cells:            448
+Number of sequential cells:                38
+Number of macros/black boxes:               0
+Number of buf/inv:                         31
+Number of references:                       6
+
+Combinational area:               4735.180843
+Buf/Inv area:                      171.417604
+Noncombinational area:            1461.657598
+Macro/Black Box area:                0.000000
+Net Interconnect area:             261.933927
+
+Total cell area:                  6196.838442
+Total area:                       6458.772369
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+dummyALU                                 48.933  142.918 4.88e+06  196.730 100.0
+  comp_top_level (top_level)             47.223  141.463 4.62e+06  193.309  98.3
+    ff_out (Reg_nbit16)                1.40e-03    2.555 7.87e+05    3.343   1.7
+    ff_lut_in_a (Reg_nbit3)            9.64e-02    0.680 1.83e+05    0.959   0.5
+    LukAp (LUT_3bit)                      0.500    2.176 1.32e+05    2.808   1.4
+    Logica (LogicFunction)                3.753   10.693 4.12e+05   14.857   7.6
+    Adder_1 (Adder_nbit8)                 4.248   11.686 3.34e+05   16.268   8.3
+    Multiplier_1 (Multiplier_nbit8)      34.036   98.995 2.14e+06  135.173  68.7
+
+data required time                                                 4.98      
+  data arrival time                                                 -1.17
+
+
+ADDL
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+dummyALU                                 46.190  135.941 4.58e+06  186.709 100.0
+  comp_top_level (top_level)             44.480  134.486 4.32e+06  183.288  98.2
+    ff_out (Reg_nbit16)                1.40e-03    2.555 7.87e+05    3.343   1.8
+    ff_lut_in_a (Reg_nbit3)            9.64e-02    0.680 1.83e+05    0.959   0.5
+    LukAp (LUT_3bit)                      0.500    2.176 1.32e+05    2.808   1.5
+    Logica (LogicFunction)                3.753   10.693 4.12e+05   14.857   8.0
+    Adder_1 (Adder_nbit8)                 1.733    4.854 5.72e+04    6.644   3.6
+    Multiplier_1 (Multiplier_nbit8)      34.036   98.995 2.14e+06  135.173  72.4
+data required time                                                 4.98      
+  data arrival time                                                 -1.17  
+LOGL
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+dummyALU                                 46.426  136.433 4.51e+06  187.374 100.0
+  comp_top_level (top_level)             44.715  134.978 4.26e+06  183.952  98.2
+    ff_out (Reg_nbit16)                1.40e-03    2.555 7.87e+05    3.343   1.8
+    ff_lut_in_a (Reg_nbit3)            9.64e-02    0.680 1.83e+05    0.959   0.5
+    LukAp (LUT_3bit)                      0.500    2.176 1.32e+05    2.808   1.5
+    Logica (LogicFunction)                1.501    4.331 7.26e+04    5.905   3.2
+    Adder_1 (Adder_nbit8)                 4.248   11.686 3.34e+05   16.268   8.7
+    Multiplier_1 (Multiplier_nbit8)      34.036   98.995 2.14e+06  135.173  72.1
+data required time                                                 4.98      
+  data arrival time                                                 -1.17    
+LUTL
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+dummyALU                                 48.515  141.664 4.77e+06  194.948 100.0
+  comp_top_level (top_level)             46.805  140.209 4.51e+06  191.527  98.2
+    ff_out (Reg_nbit16)                1.40e-03    2.555 7.87e+05    3.343   1.7
+    ff_lut_in_a (Reg_nbit3)            9.04e-02    0.671 1.83e+05    0.945   0.5
+    LukAp (LUT_3bit)                      0.202    0.941 2.56e+04    1.168   0.6
+    Logica (LogicFunction)                3.753   10.693 4.12e+05   14.857   7.6
+    Adder_1 (Adder_nbit8)                 4.248   11.686 3.34e+05   16.268   8.3
+    Multiplier_1 (Multiplier_nbit8)      34.036   98.995 2.14e+06  135.173  69.3
+data required time                                                 4.98      
+  data arrival time                                                 -1.57  
+mulL
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+dummyALU                                 28.214   84.923 2.99e+06  116.130 100.0
+  comp_top_level (top_level)             26.503   83.468 2.74e+06  112.708  97.1
+    ff_out (Reg_nbit16)                1.40e-03    2.555 7.87e+05    3.343   2.9
+    ff_lut_in_a (Reg_nbit3)            9.64e-02    0.680 1.83e+05    0.959   0.8
+    LukAp (LUT_3bit)                      0.500    2.176 1.32e+05    2.808   2.4
+    Logica (LogicFunction)                3.753   10.693 4.12e+05   14.857  12.8
+    Adder_1 (Adder_nbit8)                 4.248   11.686 3.34e+05   16.268  14.0
+    Multiplier_1 (Multiplier_nbit8)      13.545   41.307 3.08e+05   55.160  47.5
+data required time                                                 4.98      
+  data arrival time                                                 -1.17  

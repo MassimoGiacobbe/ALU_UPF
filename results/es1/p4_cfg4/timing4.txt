@@ -1,0 +1,89 @@
+Warning: No operating condition has been set explicitly on the current design. A default operating condition will be assumed. (MV-028)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : dummyALU
+Version: S-2021.06-SP4
+Date   : Tue May 30 09:54:48 2023
+****************************************
+Wire Load Model Mode: enclosed
+
+  Startpoint: comp_top_level/ff_mul_in_b/CELL_0/FLIPFLOP_0/QTemp_reg
+              (rising edge-triggered flip-flop clocked by MYclk)
+  Endpoint: comp_top_level/ff_out/CELL_12/FLIPFLOP_0/QTemp_reg
+            (rising edge-triggered flip-flop clocked by MYclk)
+  Path Group: MYclk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  dummyALU           8000                  saed90nm_typ_ntl
+  top_level          8000                  saed90nm_typ_ntl
+  Multiplier_nbit8   8000                  saed90nm_typ_ntl
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  clock MYclk (rise edge)                                 0.00       0.00      
+  clock network delay (ideal)                             0.00       0.00      
+  comp_top_level/ff_mul_in_b/CELL_0/FLIPFLOP_0/QTemp_reg/CLK (RDFFARX1_HVT)
+                                                          0.00       0.00 r    1.20
+  comp_top_level/ff_mul_in_b/CELL_0/FLIPFLOP_0/QTemp_reg/Q (RDFFARX1_HVT)
+                                                          0.18       0.18 r    1.20
+  comp_top_level/ff_mul_in_b/Q[0] (Reg_nbit8_0)           0.00       0.18 r    
+  comp_top_level/Multiplier_1/B[0] (Multiplier_nbit8)     0.00       0.18 r    
+  comp_top_level/Multiplier_1/B[0]_UPF_LS/Q (LSDNSSX2)
+                                                          0.13       0.31 r    1.20
+  comp_top_level/Multiplier_1/U268/QN (NAND2X1_LVT)       0.17       0.48 f    1.20
+  comp_top_level/Multiplier_1/U246/Q (OR2X1)              0.15       0.62 f    1.20
+  comp_top_level/Multiplier_1/U346/Q (XNOR2X1_HVT)        0.21       0.83 r    1.20
+  comp_top_level/Multiplier_1/U265/QN (NOR2X0_LVT)        0.10       0.93 f    1.20
+  comp_top_level/Multiplier_1/U264/Q (OR2X1_LVT)          0.11       1.04 f    1.20
+  comp_top_level/Multiplier_1/U312/Q (XNOR2X1)            0.19       1.23 r    1.20
+  comp_top_level/Multiplier_1/U349/QN (NAND2X1_LVT)       0.09       1.32 f    1.20
+  comp_top_level/Multiplier_1/U216/QN (NAND2X0)           0.09       1.41 r    1.20
+  comp_top_level/Multiplier_1/U101/Q (XOR2X1_LVT)         0.17       1.58 f    1.20
+  comp_top_level/Multiplier_1/U204/QN (NOR2X0)            0.09       1.67 r    1.20
+  comp_top_level/Multiplier_1/U194/Q (OR2X1)              0.13       1.80 r    1.20
+  comp_top_level/Multiplier_1/U189/Q (XNOR2X1)            0.19       1.99 r    1.20
+  comp_top_level/Multiplier_1/U351/QN (NAND2X0_LVT)       0.08       2.07 f    1.20
+  comp_top_level/Multiplier_1/U352/QN (NAND2X0_LVT)       0.09       2.15 r    1.20
+  comp_top_level/Multiplier_1/U172/Q (XNOR2X1)            0.20       2.35 r    1.20
+  comp_top_level/Multiplier_1/U313/Q (OR2X1_LVT)          0.10       2.45 r    1.20
+  comp_top_level/Multiplier_1/U266/QN (NAND2X1_LVT)       0.10       2.55 f    1.20
+  comp_top_level/Multiplier_1/U155/Q (XOR2X1_LVT)         0.16       2.71 f    1.20
+  comp_top_level/Multiplier_1/U314/Q (XNOR2X1)            0.19       2.90 r    1.20
+  comp_top_level/Multiplier_1/U295/Q (OR2X1_HVT)          0.14       3.04 r    1.20
+  comp_top_level/Multiplier_1/U363/ZN (INVX0_HVT)         0.08       3.12 f    1.20
+  comp_top_level/Multiplier_1/U299/Q (OR2X1_LVT)          0.10       3.22 f    1.20
+  comp_top_level/Multiplier_1/U144/QN (NAND2X1)           0.09       3.31 r    1.20
+  comp_top_level/Multiplier_1/U316/QN (AOI21X1)           0.14       3.45 f    1.20
+  comp_top_level/Multiplier_1/U376/ZN (INVX0_HVT)         0.08       3.53 r    1.20
+  comp_top_level/Multiplier_1/U377/Q (XOR2X1_HVT)         0.17       3.70 f    1.20
+  comp_top_level/Multiplier_1/O[12] (Multiplier_nbit8)
+                                                          0.00       3.70 f    
+  comp_top_level/snps_PD2__iso_cell_PD2_snps_O[12]_UPF_ISO/Q (LSUPENX2)
+                                                          0.16       3.86 f    1.20
+  comp_top_level/U8/Q (AND2X1_HVT)                        0.11       3.97 f    1.20
+  comp_top_level/ff_out/D[12] (Reg_nbit16)                0.00       3.97 f    
+  comp_top_level/ff_out/CELL_12/FLIPFLOP_0/QTemp_reg/D (RDFFARX1_HVT)
+                                                          0.02       3.99 f    1.20
+  data arrival time                                                  3.99      
+
+  clock MYclk (rise edge)                                 5.00       5.00      
+  clock network delay (ideal)                             0.00       5.00      
+  comp_top_level/ff_out/CELL_12/FLIPFLOP_0/QTemp_reg/CLK (RDFFARX1_HVT)
+                                                          0.00       5.00 r    
+  library setup time                                     -0.02       4.98      
+  data required time                                                 4.98      
+  ------------------------------------------------------------------------------------
+  data required time                                                 4.98      
+  data arrival time                                                 -3.99      
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                        0.99      
+
+
+1

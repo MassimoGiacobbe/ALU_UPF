@@ -1,0 +1,74 @@
+Warning: Design 'dummyALU' has '8' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Unable to resolve reference 'Reg_nbit8_6' in 'top_level'. (LINK-5)
+Warning: Unable to resolve reference 'Reg_nbit8_5' in 'top_level'. (LINK-5)
+Warning: Unable to resolve reference 'Reg_nbit8_4' in 'top_level'. (LINK-5)
+Warning: Unable to resolve reference 'Reg_nbit8_3' in 'top_level'. (LINK-5)
+Warning: Unable to resolve reference 'Reg_nbit8_2' in 'top_level'. (LINK-5)
+Warning: Unable to resolve reference 'Reg_nbit8_1' in 'top_level'. (LINK-5)
+Warning: Unable to resolve reference 'Reg_nbit8_0' in 'top_level'. (LINK-5)
+Warning: Unable to resolve reference 'Reg_nbit2_0' in 'top_level'. (LINK-5)
+Warning: No operating condition has been set explicitly on the current design. A default operating condition will be assumed. (MV-028)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : dummyALU
+Version: S-2021.06-SP4
+Date   : Wed Jun  7 10:03:28 2023
+****************************************
+Wire Load Model Mode: enclosed
+
+  Startpoint: comp_top_level/ff_lut_in_a/CELL_0/FLIPFLOP_0/QTemp_reg
+              (rising edge-triggered flip-flop clocked by MYclk)
+  Endpoint: comp_top_level/ff_out/CELL_15/FLIPFLOP_0/QTemp_reg
+            (rising edge-triggered flip-flop clocked by MYclk)
+  Path Group: MYclk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  dummyALU           8000                  saed90nm_typ_ntl
+  top_level          8000                  saed90nm_typ_ntl
+  LUT_3bit           ForQA                 saed90nm_typ_ntl
+
+  Point                                                   Incr       Path      Voltage
+  ------------------------------------------------------------------------------------
+  clock MYclk (rise edge)                                 0.00       0.00      
+  clock network delay (ideal)                             0.00       0.00      
+  comp_top_level/ff_lut_in_a/CELL_0/FLIPFLOP_0/QTemp_reg/CLK (RDFFARX1_HVT)
+                                                          0.00       0.00 r    1.20
+  comp_top_level/ff_lut_in_a/CELL_0/FLIPFLOP_0/QTemp_reg/Q (RDFFARX1_HVT)
+                                                          0.18       0.18 r    1.20
+  comp_top_level/ff_lut_in_a/Q[0] (Reg_nbit3)             0.00       0.18 r    
+  comp_top_level/LukAp/input[0] (LUT_3bit)                0.00       0.18 r    
+  comp_top_level/LukAp/input[0]_UPF_LS/Q (LSDNSSX1_HVT)
+                                                          0.13       0.31 r    1.20
+  comp_top_level/LukAp/U2/Q (MUX41X1_HVT)                 0.26       0.57 f    1.20
+  comp_top_level/LukAp/U3/Q (MUX21X1_HVT)                 0.14       0.71 f    1.20
+  comp_top_level/LukAp/output (LUT_3bit)                  0.00       0.71 f    
+  comp_top_level/snps_PD3__iso_cell_PD3_snps_output_UPF_ISO/Q (LSUPENX1_HVT)
+                                                          0.16       0.86 f    1.20
+  comp_top_level/U17/Q (OA221X1_HVT)                      0.15       1.01 f    1.20
+  comp_top_level/U18/Q (OR2X1_HVT)                        0.13       1.14 f    1.20
+  comp_top_level/ff_out/D[15] (Reg_nbit16)                0.00       1.14 f    
+  comp_top_level/ff_out/CELL_15/FLIPFLOP_0/QTemp_reg/D (RDFFARX1_HVT)
+                                                          0.02       1.17 f    1.20
+  data arrival time                                                  1.17      
+
+  clock MYclk (rise edge)                                 5.00       5.00      
+  clock network delay (ideal)                             0.00       5.00      
+  comp_top_level/ff_out/CELL_15/FLIPFLOP_0/QTemp_reg/CLK (RDFFARX1_HVT)
+                                                          0.00       5.00 r    
+  library setup time                                     -0.02       4.98      
+  data required time                                                 4.98      
+  ------------------------------------------------------------------------------------
+  data required time                                                 4.98      
+  data arrival time                                                 -1.17      
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                        3.82      
+
+
+1

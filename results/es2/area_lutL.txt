@@ -1,0 +1,59 @@
+Warning: Design 'dummyALU' has '8' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : area
+Design : dummyALU
+Version: S-2021.06-SP4
+Date   : Wed Jun  7 09:56:40 2023
+****************************************
+
+Library(s) Used:
+
+    saed90nm_typ_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_hvt.db)
+    saed90nm_typ_nthh_hvt_lsh (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters/saed90nm_typ_nthh_hvt_lsh.db)
+    saed90nm_typ_nthn_hvt_lsh (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters/saed90nm_typ_nthn_hvt_lsh.db)
+    saed90nm_typ_rdr_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/retention/with_async_reset/saed90nm_typ_rdr_hvt.db)
+    saed90nm_typ_ntl_hvt (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ_ntl_hvt.db)
+    saed90nm_typ_nthn_hvt_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthn_hvt_lshss.db)
+    saed90nm_typ_nthh_hvt_lshss (File: /eda/dk/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/level_shifters_ss/saed90nm_typ_nthh_hvt_lshss.db)
+
+Number of ports:                          244
+Number of nets:                           772
+Number of cells:                          495
+Number of combinational cells:            448
+Number of sequential cells:                38
+Number of macros/black boxes:               0
+Number of buf/inv:                         31
+Number of references:                       6
+
+Combinational area:               4735.180843
+Buf/Inv area:                      171.417604
+Noncombinational area:            1461.657598
+Macro/Black Box area:                0.000000
+Net Interconnect area:             261.933927
+
+Total cell area:                  6196.838442
+Total area:                       6458.772369
+
+Information: This design contains black box (unknown) components. (RPT-8)
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  ----------------
+dummyALU                          6196.8384    100.0    47.0016   223.9488  0.0000  dummyALU
+comp_top_level                    5925.8880     95.6  1302.2208    64.5120  0.0000  top_level
+comp_top_level/Adder_1             305.9712      4.9   305.9712     0.0000  0.0000  Adder_nbit8
+comp_top_level/Logica              396.2880      6.4   396.2880     0.0000  0.0000  LogicFunction
+comp_top_level/LukAp               117.9648      1.9   117.9648     0.0000  0.0000  LUT_3bit
+comp_top_level/Multiplier_1       2532.5568     40.9  2532.5568     0.0000  0.0000  Multiplier_nbit8
+comp_top_level/ff_lut_in_a         218.4192      3.5    33.1776   185.2416  0.0000  Reg_nbit3
+comp_top_level/ff_out              987.9552     15.9     0.0000   987.9552  0.0000  Reg_nbit16
+--------------------------------  ---------  -------  ---------  ---------  ------  ----------------
+Total                                                 4735.1808  1461.6576  0.0000
+
+1

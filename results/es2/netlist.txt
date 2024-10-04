@@ -1,0 +1,122 @@
+
+library IEEE;
+
+use IEEE.std_logic_1164.all;
+
+package CONV_PACK_dummyALU is
+
+-- define attributes
+attribute ENUM_ENCODING : STRING;
+
+end CONV_PACK_dummyALU;
+
+library IEEE;
+
+use IEEE.std_logic_1164.all;
+
+use work.CONV_PACK_dummyALU.all;
+
+entity dummyALU is
+
+   port( clk, rst_n : in std_logic;  O : out std_logic_vector (15 downto 0);  B
+         , A : in std_logic_vector (7 downto 0);  go_sleep : in std_logic;  
+         OP_CODE, FuncL : in std_logic_vector (1 downto 0);  Lut_prog : in 
+         std_logic_vector (7 downto 0));
+
+end dummyALU;
+
+architecture SYN_structure of dummyALU is
+
+   component NOR2X0_HVT
+      port( IN1, IN2 : in std_logic;  QN : out std_logic);
+   end component;
+   
+   component INVX0_HVT
+      port( INP : in std_logic;  ZN : out std_logic);
+   end component;
+   
+   component NAND2X0_HVT
+      port( IN1, IN2 : in std_logic;  QN : out std_logic);
+   end component;
+   
+   component AND3X1_HVT
+      port( IN1, IN2, IN3 : in std_logic;  Q : out std_logic);
+   end component;
+   
+   component DFFX1_HVT
+      port( D, CLK : in std_logic;  Q, QN : out std_logic);
+   end component;
+   
+   component top_level
+      port( clk, rst_n : in std_logic;  O : out std_logic_vector (15 downto 0);
+            B, A : in std_logic_vector (7 downto 0);  turn_off_add, 
+            turn_off_mul, turn_off_lut, turn_off_logic, iso_add, iso_mul, 
+            iso_lut, iso_logic, ret_reg_rest_in, ret_reg_rest_out : in 
+            std_logic;  OP_CODE, Func_L : in std_logic_vector (1 downto 0);  
+            Lut_Prog : in std_logic_vector (7 downto 0));
+   end component;
+   
+   signal s_turn_off_add, s_turn_off_mul, s_turn_off_lut, s_turn_off_logic, 
+      s_iso_add, s_iso_mul, s_iso_lut, s_iso_logic, s_ret_reg_rest_out, 
+      comp_PMU_iso_logic_int, comp_PMU_iso_lut_int, comp_PMU_iso_mul_int, 
+      comp_PMU_iso_add_int, n33, n34, n35, n36, n_1000, n_1001, n_1002, n_1003,
+      n_1004, n_1005, n_1006, n_1007, n_1008 : std_logic;
+
+begin
+   
+   comp_top_level : top_level port map( clk => clk, rst_n => rst_n, O(15) => 
+                           O(15), O(14) => O(14), O(13) => O(13), O(12) => 
+                           O(12), O(11) => O(11), O(10) => O(10), O(9) => O(9),
+                           O(8) => O(8), O(7) => O(7), O(6) => O(6), O(5) => 
+                           O(5), O(4) => O(4), O(3) => O(3), O(2) => O(2), O(1)
+                           => O(1), O(0) => O(0), B(7) => B(7), B(6) => B(6), 
+                           B(5) => B(5), B(4) => B(4), B(3) => B(3), B(2) => 
+                           B(2), B(1) => B(1), B(0) => B(0), A(7) => A(7), A(6)
+                           => A(6), A(5) => A(5), A(4) => A(4), A(3) => A(3), 
+                           A(2) => A(2), A(1) => A(1), A(0) => A(0), 
+                           turn_off_add => s_turn_off_add, turn_off_mul => 
+                           s_turn_off_mul, turn_off_lut => s_turn_off_lut, 
+                           turn_off_logic => s_turn_off_logic, iso_add => 
+                           s_iso_add, iso_mul => s_iso_mul, iso_lut => 
+                           s_iso_lut, iso_logic => s_iso_logic, ret_reg_rest_in
+                           => go_sleep, ret_reg_rest_out => s_ret_reg_rest_out,
+                           OP_CODE(1) => OP_CODE(1), OP_CODE(0) => OP_CODE(0), 
+                           Func_L(1) => FuncL(1), Func_L(0) => FuncL(0), 
+                           Lut_Prog(7) => Lut_prog(7), Lut_Prog(6) => 
+                           Lut_prog(6), Lut_Prog(5) => Lut_prog(5), Lut_Prog(4)
+                           => Lut_prog(4), Lut_Prog(3) => Lut_prog(3), 
+                           Lut_Prog(2) => Lut_prog(2), Lut_Prog(1) => 
+                           Lut_prog(1), Lut_Prog(0) => Lut_prog(0));
+   comp_PMU_ret_reg_rest_out_reg : DFFX1_HVT port map( D => go_sleep, CLK => 
+                           clk, Q => s_ret_reg_rest_out, QN => n_1000);
+   comp_PMU_iso_logic_reg : DFFX1_HVT port map( D => comp_PMU_iso_logic_int, 
+                           CLK => clk, Q => s_iso_logic, QN => n_1001);
+   comp_PMU_iso_lut_reg : DFFX1_HVT port map( D => comp_PMU_iso_lut_int, CLK =>
+                           clk, Q => s_iso_lut, QN => n_1002);
+   comp_PMU_iso_mul_reg : DFFX1_HVT port map( D => comp_PMU_iso_mul_int, CLK =>
+                           clk, Q => s_iso_mul, QN => n_1003);
+   comp_PMU_iso_add_reg : DFFX1_HVT port map( D => comp_PMU_iso_add_int, CLK =>
+                           clk, Q => s_iso_add, QN => n_1004);
+   comp_PMU_turn_off_logic_reg : DFFX1_HVT port map( D => 
+                           comp_PMU_iso_logic_int, CLK => clk, Q => n_1005, QN 
+                           => s_turn_off_logic);
+   comp_PMU_turn_off_lut_reg : DFFX1_HVT port map( D => comp_PMU_iso_lut_int, 
+                           CLK => clk, Q => n_1006, QN => s_turn_off_lut);
+   comp_PMU_turn_off_mul_reg : DFFX1_HVT port map( D => comp_PMU_iso_mul_int, 
+                           CLK => clk, Q => n_1007, QN => s_turn_off_mul);
+   comp_PMU_turn_off_add_reg : DFFX1_HVT port map( D => comp_PMU_iso_add_int, 
+                           CLK => clk, Q => n_1008, QN => s_turn_off_add);
+   U43 : NAND2X0_HVT port map( IN1 => go_sleep, IN2 => n34, QN => n35);
+   U44 : AND3X1_HVT port map( IN1 => OP_CODE(0), IN2 => OP_CODE(1), IN3 => 
+                           go_sleep, Q => comp_PMU_iso_logic_int);
+   U45 : NAND2X0_HVT port map( IN1 => OP_CODE(1), IN2 => go_sleep, QN => n33);
+   U46 : NOR2X0_HVT port map( IN1 => OP_CODE(0), IN2 => n33, QN => 
+                           comp_PMU_iso_lut_int);
+   U47 : INVX0_HVT port map( INP => OP_CODE(1), ZN => n34);
+   U48 : NOR2X0_HVT port map( IN1 => OP_CODE(0), IN2 => n35, QN => 
+                           comp_PMU_iso_mul_int);
+   U49 : INVX0_HVT port map( INP => OP_CODE(0), ZN => n36);
+   U50 : NOR2X0_HVT port map( IN1 => n36, IN2 => n35, QN => 
+                           comp_PMU_iso_add_int);
+
+end SYN_structure;
