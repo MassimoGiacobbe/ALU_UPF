@@ -1,12 +1,16 @@
 # ALU_UPF
-# Project: Power Management using Unified Power Format (UPF) - Group 15
+# Project: Power Management using Unified Power Format (UPF) 
 
 **Team Members:**
-- Paolo Borgis (S315155)
-- Massimo Giacobbe (S319898)
-- Giuseppe Salvatore Piazza (S308766)
+- Paolo Borgis 
+- Massimo Giacobbe 
+- Giuseppe Salvatore Piazza
+- ## Folder organization
+-  vhdl: contains all the vhdl source file
+-  tb_upf: contains compilation scripts, upf file and testbench
+-  results: contains all the power reports of the various modes analyzed(summarized in [Results and Achievements](#results-and-achievements))
 
-## Table of Contents
+- ## Table of Contents
 
 1. [Project Overview](#project-overview)
 2. [Objectives](#objectives)
