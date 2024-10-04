@@ -4,7 +4,7 @@
 **Team Members:**
 - Paolo Borgis 
 - Massimo Giacobbe 
-- Giuseppe Salvatore Piazza
+- Giuseppe Salvatore Piazza (https://github.com/lithium333)
 - ## Folder organization
 -  vhdl: contains all the vhdl source file
 -  tb_upf: contains compilation scripts, upf file and testbench
